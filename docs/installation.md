@@ -157,8 +157,6 @@ nano .env
 
 ```ini
 # BookLore Application Settings
-APP_USER_ID=0
-APP_GROUP_ID=0
 TZ=Etc/UTC
 BOOKLORE_PORT=6060
 
@@ -192,8 +190,6 @@ services:
     image: booklore/booklore:latest
     container_name: booklore
     environment:
-      - USER_ID=${APP_USER_ID}
-      - GROUP_ID=${APP_GROUP_ID}
       - TZ=${TZ}
       - DATABASE_URL=${DATABASE_URL}
       - DATABASE_USERNAME=${DB_USER}
@@ -234,7 +230,6 @@ services:
 #### Key Configuration Notes
 
 **User IDs:**
-- `APP_USER_ID/GROUP_ID`: Set to your user ID (find with `id -u` and `id -g`)
 - `DB_USER_ID/GROUP_ID`: Typically `1000` or match your user IDs
 
 **Passwords:**
